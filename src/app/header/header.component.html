@@ -1,0 +1,31 @@
+<header class="d-flex flex-wrap align-items-center justify-content-center py-3 mb-4 navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="col-md-3 mb-2 mb-md-0">
+    <a routerLink="" class="navbar-brand link-body-emphasis text-decoration-none">
+      <fa-icon [icon]="logo" size="2xl" class="text-white"></fa-icon>
+      {{titulo}}
+    </a>
+  </div>
+
+  <nav class="nav col-12 col-md-auto mb-2 mb-md-0">
+    <li *ngFor="let ruta of rutas">
+      <a [routerLink]="ruta.path" 
+          class="nav-link px-2 mx-1 text-light" 
+          routerLinkActive="btn btn-primary text-white"
+      >{{ ruta.title }}</a>
+    </li>
+  </nav>
+
+  <div class="col-md-3 text-end" *ngIf="usuario">
+    <div ngbDropdown class="d-inline-block">
+      <button ngbDropdownToggle class="btn btn-outline-info text-white me-2">{{ usuario.displayName || usuario.email }}</button>
+      <div ngbDropdownMenu>
+        <button ngbDropdownItem *ngFor="let ruta of rutasUsuario" [routerLink]="ruta.path">{{ ruta.title }}</button>
+      </div>
+    </div>
+    <button (click)="cerrarSesion_click()" type="button" class="btn btn-danger me-2">Cerrar sesión</button>
+  </div>
+
+  <div class="col-md-3 text-end" *ngIf="!usuario">
+    <button routerLink="login" type="button" class="btn btn-info me-2">Login</button>
+  </div>
+</header>
