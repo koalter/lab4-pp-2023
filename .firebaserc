@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lcea-pp-2023": {
+      "hosting": {
+        "lab4-pp-2023": [
+          "lcea-pp-2023"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lcea-pp-2023"
+  }
+}
