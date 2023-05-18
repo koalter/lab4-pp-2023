@@ -13,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { ToastsComponent } from './toasts/toasts.component';
 import { SpinnerComponent } from './spinner/spinner.component';
-import { TablaPaisesComponent } from './tabla-paises/tabla-paises.component';
+import { PaisModule } from './pais/pais.module';
+import { RepartidorModule } from './repartidor/repartidor.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TablaPaisesComponent } from './tabla-paises/tabla-paises.component';
     HttpClientModule,
     ToastsComponent,
     SpinnerComponent,
-    TablaPaisesComponent
+    PaisModule,
+    RepartidorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
