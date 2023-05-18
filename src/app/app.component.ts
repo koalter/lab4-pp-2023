@@ -16,7 +16,8 @@ export class AppComponent implements OnInit, OnDestroy {
   ];
   userRoutes: Routes = [
     { path: 'repartidor/alta', title: 'Alta Repartidor' },
-    { path: 'repartidor', title: 'Repartidor detalle' }
+    { path: 'repartidor', title: 'Repartidor detalle' },
+    { path: 'pizzas', title: 'Pizzas' }
   ];
   spinner: boolean = false;
   spinnerSubscription!: Subscription;

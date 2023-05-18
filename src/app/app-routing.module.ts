@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '@angular/fire/auth-guard';
+import { AuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   {
@@ -18,6 +18,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./repartidor/repartidor.module').then((m) => m.RepartidorModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'pizzas',
+    loadChildren: () =>
+      import('./pizzas/pizzas.module').then((m) => m.PizzasModule),
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: () => redirectUnauthorizedTo('login') }
   },
   { path: '', redirectTo: 'bienvenido', pathMatch: 'full' },
   {

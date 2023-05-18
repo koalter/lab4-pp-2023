@@ -1,0 +1,20 @@
+<div class="table-responsive">
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th style="width: 34%;">Nombre</th>
+        <th style="width: 22%;">Ingredientes</th>
+        <th style="width: 22%;">Precio</th>
+        <th style="width: 22%;">Peso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list" (click)="seleccionar_click(item)">
+        <th scope="row">{{ item.nombre }}</th>
+        <td>{{ item.ingredientes.join() }}</td>
+        <td>$ {{ item.precio }}</td>
+        <td>{{ item.peso }}g</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
