@@ -4,17 +4,23 @@ import { CommonModule } from '@angular/common';
 import { RepartidorRoutingModule } from './repartidor-routing.module';
 import { AltaRepartidorComponent } from './alta-repartidor/alta-repartidor.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TablaPaisesComponent } from '../tabla-paises/tabla-paises.component';
+import { PaisModule } from '../pais/pais.module';
+import { DetalleRepartidorComponent } from './detalle-repartidor/detalle-repartidor.component';
+import { RepartidorComponent } from './repartidor.component';
+import { ListadoRepartidorComponent } from './listado-repartidor/listado-repartidor.component';
 
 @NgModule({
   declarations: [
-    AltaRepartidorComponent
+    RepartidorComponent,
+    AltaRepartidorComponent,
+    DetalleRepartidorComponent,
+    ListadoRepartidorComponent
   ],
   imports: [
     CommonModule,
     RepartidorRoutingModule,
     ReactiveFormsModule,
-    TablaPaisesComponent
+    PaisModule
   ]
 })
 export class RepartidorModule { }

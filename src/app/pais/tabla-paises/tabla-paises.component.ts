@@ -1,11 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PaisesService } from '../shared/paises.service';
 
 @Component({
   selector: 'tabla-paises',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './tabla-paises.component.html',
   styleUrls: ['./tabla-paises.component.scss']
 })

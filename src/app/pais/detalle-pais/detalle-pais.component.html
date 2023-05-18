@@ -1,0 +1,22 @@
+<div class="h-100 p-5 bg-light border rounded-3">
+    <h2>Datos del pais (y su bandera)</h2>
+    
+    <div class="container" *ngIf="item">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        <img [src]="item.flags.svg" width="50" />
+                    </th>
+                    <td>{{ item.name.common }}</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <button 
+        class="btn btn-outline-secondary" 
+        type="button"
+        (click)="limpiar_click()"
+        >Limpiar</button>
+    </div>
+</div>

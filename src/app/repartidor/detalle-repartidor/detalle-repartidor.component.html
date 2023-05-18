@@ -1,0 +1,14 @@
+<div class="h-100 p-5 text-white bg-dark rounded-3">
+    <h2>Detalle del repartidor</h2>
+    
+    <div class="container" *ngIf="item">
+        <table class="table table-striped">
+            <tbody>
+                <tr *ngFor="let prop of item | keyvalue">
+                    <th class="text-light" scope="row">{{ prop.key | uppercase }}</th>
+                    <td class="text-light">{{ prop.value }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

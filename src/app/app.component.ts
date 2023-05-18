@@ -15,7 +15,8 @@ export class AppComponent implements OnInit, OnDestroy {
     { path: 'bienvenido', title: 'Bienvenido' }
   ];
   userRoutes: Routes = [
-    { path: 'repartidor/alta', title: 'Alta Repartidor' }
+    { path: 'repartidor/alta', title: 'Alta Repartidor' },
+    { path: 'repartidor', title: 'Repartidor detalle' }
   ];
   spinner: boolean = false;
   spinnerSubscription!: Subscription;
@@ -27,7 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
   
   ngOnInit(): void {
     this.authService.getActiveUser(user => this.usuario = user);
-    this.spinnerSubscription = this.spinnerService.loading.subscribe(
+    this.spinnerSubscription = this.spinnerService.iniciar(
       state => this.spinner = state);
   }
   ngOnDestroy(): void {
