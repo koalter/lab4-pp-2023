@@ -1,0 +1,9 @@
+<div class="position-fixed top-0 end-0">
+  <ngb-toast 
+    [ngClass]="['m-3', getColor(toast)]"
+    *ngFor="let toast of toasts" 
+    [delay]="5000"
+    (hidden)="remover(toast)"
+  ><fa-icon [icon]="getIcono(toast)" size="xl"></fa-icon> {{ toast.mensaje }}
+  </ngb-toast>
+</div>

@@ -1,0 +1,16 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3"
+*ngIf="paises">
+    <span class="text-primary">Tabla de países</span>
+</h4>
+<ul class="list-group mb-3">
+    <li 
+    role="button"
+    (click)="seleccionarPais(pais)"
+    class="list-group-item d-flex justify-content-between lh-sm"
+    *ngFor="let pais of paises">
+        <div>
+            <h6 class="my-0">{{ pais.name.common }}</h6>
+        </div>
+        <img [src]="pais.flags.svg" width="50" />
+    </li>
+</ul>

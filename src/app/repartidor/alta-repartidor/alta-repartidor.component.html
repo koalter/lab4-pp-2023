@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row g-5">
+    <tabla-paises 
+    class="col-md-5 col-lg-4 order-md-last" 
+    (pais)="seleccionarPais($event)"
+    ></tabla-paises>
+
+    <div class="col-md-7 col-lg-8">
+      <h4 class="mb-3">Alta repartidor</h4>
+      <form [formGroup]="formulario" class="mb-3" (ngSubmit)="altaRepartidor()">
+        <div class="row g-3">
+          <div class="col-sm-12">
+            <label for="firstName" class="form-label">Nombre</label>
+            <input formControlName="nombre" type="text" class="form-control" id="firstName">
+            <small class="text-danger" *ngIf="nombre?.touched && nombre?.errors">
+              Ingrese un nombre válido
+            </small>
+          </div>
+
+          <div class="col-sm-12">
+            <label for="lastName" class="form-label">Apellido</label>
+            <input formControlName="apellido" type="text" class="form-control" id="lastName">
+            <small class="text-danger" *ngIf="apellido?.touched && apellido?.errors">
+              Ingrese un apellido válido
+            </small>
+          </div>
+
+          <div class="col-md-3">
+            <label for="edad" class="form-label">Edad</label>
+            <input formControlName="edad" type="number" class="form-control" id="edad">
+            <small class="text-danger" *ngIf="edad?.touched && edad?.errors">
+              Ingrese una edad válida
+            </small>
+          </div>
+
+          <div class="col-md-9">
+            <label for="dni" class="form-label">DNI</label>
+            <input formControlName="dni" type="number" class="form-control" id="dni">
+            <small class="text-danger" *ngIf="dni?.touched && dni?.errors">
+              Ingrese un número de documento válido
+            </small>
+          </div>
+
+          <div class="col-sm-12">
+            <label for="pais" class="form-label">País de origen</label>
+            <input formControlName="pais" type="text" class="form-control bg-light" id="pais" readonly>
+            <small class="text-danger" *ngIf="pais?.touched && pais?.errors">
+              Escoja un país válido
+            </small>
+          </div>
+
+          <div class="col-md-5">
+            <label for="state" class="form-label">Unidad propia</label>
+            <select formControlName="unidadPropia" class="form-select" id="state">
+              <option value="">Responder</option>
+              <option [value]="true">Sí</option>
+              <option [value]="false">No</option>
+            </select>
+            <small class="text-danger" *ngIf="unidadPropia?.touched && unidadPropia?.errors">
+              Ingrese una opción
+            </small>
+          </div>
+
+
+          <div class="col-md-7">
+            <label for="capacidad" class="form-label">Capacidad de transporte</label>
+            <input formControlName="capacidad" type="number" class="form-control" id="capacidad">
+            <small class="text-danger" *ngIf="capacidad?.touched && capacidad?.errors">
+              Ingrese la capacidad
+            </small>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="!formulario.valid">Registrar nuevo
+          repartidor</button>
+      </form>
+    </div>
+  </div>
+</div>

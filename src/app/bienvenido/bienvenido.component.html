@@ -1,0 +1,14 @@
+<div class="p-5">
+    <div class="container-fluid p-5 rounded-3 card border-primary">
+        <img [src]="userData?.avatar_url" alt="avatar" width="200" class="rounded-circle mx-auto my-2">
+
+        <table class="table table-striped">
+            <tbody>
+                <tr *ngFor="let prop of userData | keyvalue">
+                    <th>{{ prop.key }}</th>
+                    <td>{{ prop.value }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

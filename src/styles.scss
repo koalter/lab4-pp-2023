@@ -2,3 +2,8 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans&display=swap');
+
+body {
+    font-family: 'Encode Sans', sans-serif;
+}
